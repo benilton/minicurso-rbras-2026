@@ -1,0 +1,255 @@
+/*-- scss:defaults --*/
+// Paleta e fontes do site da 70ª RBras, as mesmas dos slides do minicurso.
+$marinho: #0C1C3A;
+$marinho-fundo: #09152E;
+$azul: #1A3870;
+$petroleo: #2A9080;
+$petroleo-claro: #7FD3C4;
+$ouro: #D6A818;
+$ouro-claro: #EAC830;
+$ardosia: #3A5068;
+$nevoa: #F2F6FA;
+$linha: #DCE3EB;
+
+$body-bg: #FBFCFE;
+$body-color: $marinho;
+$primary: $azul;
+$secondary: $ardosia;
+$link-color: $azul;
+$font-family-sans-serif: "Inter", "Helvetica Neue", Arial, sans-serif;
+$headings-font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: "Source Code Pro", Menlo, monospace;
+$headings-font-weight: 700;
+$headings-color: $marinho;
+$font-size-base: 1.0625rem;
+$line-height-base: 1.65;
+$navbar-bg: $marinho-fundo;
+$navbar-fg: rgba(255, 255, 255, 0.82);
+$navbar-hl: #FFFFFF;
+$footer-bg: $marinho-fundo;
+$footer-fg: rgba(255, 255, 255, 0.7);
+$border-radius: 0.75rem;
+$code-color: $azul;
+
+/*-- scss:rules --*/
+$degrade: linear-gradient(135deg, #09152E 0%, #1A3870 52%, #2A9080 100%);
+$sombra: 0 1px 2px rgba(12, 28, 58, 0.06), 0 12px 32px -12px rgba(12, 28, 58, 0.18);
+$sombra-alta: 0 2px 4px rgba(12, 28, 58, 0.06), 0 24px 48px -16px rgba(12, 28, 58, 0.28);
+
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+::selection { background: rgba(214, 168, 24, 0.35); }
+
+// Barra de navegação.
+.navbar { box-shadow: none; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-top: 0.55rem; padding-bottom: 0.55rem; }
+.navbar-brand .navbar-title { font-family: "Montserrat", sans-serif; font-weight: 700; letter-spacing: 0.01em; font-size: 1rem; }
+.navbar-logo { max-height: 30px; margin-right: 0.35rem; }
+.navbar .nav-link { font-size: 0.92rem; font-weight: 600; letter-spacing: 0.01em; position: relative; }
+.navbar .nav-link.active::after, .navbar .nav-link:hover::after {
+  content: ""; position: absolute; left: 0.5rem; right: 0.5rem; bottom: 0.15rem; height: 2px; border-radius: 2px; background: $ouro;
+}
+
+// Conteúdo de largura total, com coluna central controlada pelas seções.
+#quarto-content.page-columns { padding-top: 0; }
+#quarto-content { margin-top: 0 !important; }
+main.content { margin-top: 0 !important; padding-top: 0; margin-bottom: 0; }
+body { overflow-x: hidden; }
+.capa, .faixa { width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
+#quarto-document-content > *:first-child { margin-top: 0; }
+.faixa { position: relative; padding: 4.5rem 0; }
+.miolo { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+.miolo-estreito { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+.faixa-clara { background: $nevoa; border-top: 1px solid $linha; border-bottom: 1px solid $linha; }
+
+// Rótulo acima dos títulos.
+.sobretitulo {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 0.74rem;
+  letter-spacing: 0.16em; text-transform: uppercase; color: $petroleo; margin-bottom: 0.85rem;
+  &::before { content: ""; width: 1.8rem; height: 2px; background: $ouro; border-radius: 2px; }
+}
+h2.titulo-secao { font-size: clamp(1.6rem, 3vw, 2.15rem); font-weight: 800; letter-spacing: -0.015em; line-height: 1.18; margin: 0 0 1.1rem 0; border: 0; padding: 0; }
+.lead-texto { font-size: 1.12rem; color: $ardosia; max-width: 760px; }
+
+// Capa.
+.capa {
+  position: relative; overflow: hidden; color: #FFFFFF; background: $degrade;
+  padding: 6.5rem 0 5.5rem 0;
+  &::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(600px 380px at 88% 18%, rgba(127, 211, 196, 0.22), transparent 70%),
+      radial-gradient(520px 320px at 6% 100%, rgba(214, 168, 24, 0.16), transparent 70%);
+  }
+  .miolo { position: relative; z-index: 1; }
+  .selo {
+    display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 0.72rem;
+    letter-spacing: 0.14em; text-transform: uppercase; color: $marinho; background: $ouro;
+    border-radius: 999px; padding: 0.38rem 1rem; margin-bottom: 1.6rem;
+  }
+  h1 {
+    color: #FFFFFF; font-weight: 800; letter-spacing: -0.022em; line-height: 1.08;
+    font-size: clamp(2.1rem, 5.2vw, 3.6rem); max-width: 13.5em; margin: 0 0 1.25rem 0;
+  }
+  .subtitulo { font-size: clamp(1.05rem, 1.8vw, 1.25rem); color: rgba(255, 255, 255, 0.84); max-width: 36em; margin-bottom: 2.2rem; }
+  .meta { display: flex; flex-wrap: wrap; gap: 0.75rem 2.25rem; margin-bottom: 2.6rem; }
+  .meta-item { display: flex; flex-direction: column; }
+  .meta-item .rot { font-family: "Montserrat", sans-serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: $ouro-claro; font-weight: 700; }
+  .meta-item .val { font-size: 1rem; color: #FFFFFF; font-weight: 600; }
+  &.capa-interna { padding: 4.25rem 0 3.5rem 0; }
+  &.capa-interna h1 { font-size: clamp(1.9rem, 4.2vw, 3rem); }
+  .grafismo { position: absolute; right: max(-60px, calc((100vw - 1120px) / 2 - 220px)); top: 50%; transform: translateY(-50%); width: 480px; opacity: 0.75; z-index: 0; }
+}
+
+// Botões.
+.botoes { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.botao {
+  display: inline-flex; align-items: center; gap: 0.55rem; font-family: "Montserrat", sans-serif; font-weight: 700;
+  font-size: 0.92rem; letter-spacing: 0.01em; padding: 0.8rem 1.35rem; border-radius: 999px; text-decoration: none !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease; border: 1.5px solid transparent;
+  svg { width: 1.05em; height: 1.05em; flex: none; }
+  &:hover { transform: translateY(-2px); }
+}
+.botao-ouro { background: $ouro; color: $marinho !important; box-shadow: 0 10px 24px -10px rgba(214, 168, 24, 0.8);
+  &:hover { background: $ouro-claro; } }
+.botao-vazado { color: #FFFFFF !important; border-color: rgba(255, 255, 255, 0.45); background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(4px);
+  &:hover { border-color: #FFFFFF; background: rgba(255, 255, 255, 0.12); } }
+.botao-azul { background: $azul; color: #FFFFFF !important; box-shadow: 0 10px 24px -12px rgba(26, 56, 112, 0.9);
+  &:hover { background: $marinho; } }
+.botao-claro { background: #FFFFFF; color: $azul !important; border-color: $linha;
+  &:hover { border-color: $azul; } }
+
+// Cartões.
+.grade { display: grid; gap: 1.5rem; }
+.grade-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grade-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .grade-2, .grade-3 { grid-template-columns: 1fr; } }
+
+.cartao {
+  background: #FFFFFF; border: 1px solid $linha; border-radius: 1.1rem; box-shadow: $sombra; overflow: hidden;
+  display: flex; flex-direction: column; transition: transform 0.22s ease, box-shadow 0.22s ease;
+  &:hover { transform: translateY(-4px); box-shadow: $sombra-alta; }
+  .cartao-imagem { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: $marinho;
+    img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .etiqueta { position: absolute; left: 1rem; top: 1rem; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 0.7rem;
+      letter-spacing: 0.12em; text-transform: uppercase; background: rgba(9, 21, 46, 0.72); color: #FFFFFF; padding: 0.35rem 0.75rem; border-radius: 999px; backdrop-filter: blur(6px); }
+  }
+  &:hover .cartao-imagem img { transform: scale(1.03); }
+  .cartao-corpo { padding: 1.6rem 1.6rem 1.75rem 1.6rem; display: flex; flex-direction: column; gap: 0.9rem; flex: 1; }
+  .data { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: $petroleo; }
+  h3 { font-size: 1.35rem; font-weight: 800; margin: 0; letter-spacing: -0.01em; }
+  .lista-blocos { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .lista-blocos li { font-size: 0.8rem; background: $nevoa; border: 1px solid $linha; color: $ardosia; border-radius: 999px; padding: 0.22rem 0.7rem; margin: 0; }
+  .botoes { margin-top: auto; padding-top: 0.4rem; }
+}
+
+// Pontos de destaque.
+.destaque {
+  background: #FFFFFF; border: 1px solid $linha; border-radius: 1rem; padding: 1.5rem 1.5rem 1.4rem 1.5rem; box-shadow: $sombra; position: relative;
+  .icone { width: 2.6rem; height: 2.6rem; border-radius: 0.8rem; display: grid; place-items: center; background: $degrade; margin-bottom: 1rem;
+    svg { width: 1.3rem; height: 1.3rem; color: #FFFFFF; } }
+  h4 { font-size: 1.05rem; font-weight: 700; margin: 0 0 0.45rem 0; }
+  p { margin: 0; color: $ardosia; font-size: 0.97rem; }
+}
+
+// Figura do fluxo.
+.figura-fluxo { background: #FFFFFF; border: 1px solid $linha; border-radius: 1.1rem; padding: 1.75rem; box-shadow: $sombra; overflow-x: auto;
+  img { width: 100%; min-width: 640px; height: auto; display: block; } }
+
+// Linha do tempo da programação.
+.agenda { position: relative; margin: 0; padding: 0; list-style: none; }
+.agenda::before { content: ""; position: absolute; left: 5.35rem; top: 0.6rem; bottom: 0.6rem; width: 2px; background: linear-gradient($linha, $linha); }
+.agenda li { display: grid; grid-template-columns: 4.4rem 2rem 1fr; align-items: start; gap: 0; padding: 0.7rem 0; margin: 0; }
+.agenda .hora { font-family: "Source Code Pro", monospace; font-weight: 500; font-size: 0.95rem; color: $ardosia; padding-top: 0.2rem; }
+.agenda .ponto { width: 0.85rem; height: 0.85rem; border-radius: 50%; background: #FFFFFF; border: 3px solid $azul; margin: 0.42rem 0 0 0.6rem; position: relative; z-index: 1; }
+.agenda li.marco .ponto { border-color: $ouro; background: $ouro; }
+.agenda .item { background: #FFFFFF; border: 1px solid $linha; border-radius: 0.85rem; padding: 0.85rem 1.1rem; box-shadow: 0 1px 2px rgba(12, 28, 58, 0.04);
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.9rem; }
+.agenda li.marco .item { background: transparent; border-style: dashed; box-shadow: none; }
+.agenda .cod { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.08em; color: $marinho; background: rgba(214, 168, 24, 0.22); border-radius: 999px; padding: 0.15rem 0.6rem; }
+.agenda .nome { font-weight: 600; color: $marinho; }
+.agenda .tempos { margin-left: auto; font-size: 0.85rem; color: $ardosia; white-space: nowrap; }
+.agenda .tempos b { font-weight: 600; color: $petroleo; }
+@media (max-width: 600px) {
+  .agenda::before { left: 4.35rem; }
+  .agenda li { grid-template-columns: 3.4rem 2rem 1fr; }
+  .agenda .hora { font-size: 0.85rem; }
+  .agenda .tempos { margin-left: 0; white-space: normal; }
+}
+
+// Abas de encontro na programação.
+.cabeca-encontro { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem 1rem; margin-bottom: 1.25rem; }
+.cabeca-encontro h3 { font-size: 1.45rem; font-weight: 800; margin: 0; }
+.cabeca-encontro .quando { color: $ardosia; font-size: 0.95rem; }
+
+// Visualizador de slides.
+.moldura-slides { position: relative; border-radius: 1.1rem; overflow: hidden; box-shadow: $sombra-alta; border: 1px solid $linha; background: $marinho; aspect-ratio: 16 / 9; }
+.moldura-slides iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.dica { font-size: 0.88rem; color: $ardosia; margin-top: 0.85rem; }
+kbd { font-family: "Source Code Pro", monospace; font-size: 0.8em; background: #FFFFFF; color: $marinho; border: 1px solid $linha; border-bottom-width: 2px; border-radius: 0.35rem; padding: 0.05rem 0.4rem; }
+
+// Tabela de verificações.
+.tabela-verif { width: 100%; border-collapse: separate; border-spacing: 0; background: #FFFFFF; border: 1px solid $linha; border-radius: 1rem; overflow: hidden; box-shadow: $sombra; font-size: 0.95rem; }
+.tabela-verif th { font-family: "Montserrat", sans-serif; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: $ardosia; background: $nevoa; padding: 0.85rem 1.1rem; text-align: left; border-bottom: 1px solid $linha; }
+.tabela-verif td { padding: 0.8rem 1.1rem; border-bottom: 1px solid $linha; vertical-align: middle; }
+.tabela-verif tr:last-child td { border-bottom: 0; }
+.tabela-verif td:first-child { width: 5.5rem; }
+.tabela-verif code { font-family: "Source Code Pro", monospace; color: $azul; background: $nevoa; border: 1px solid $linha; border-radius: 0.4rem; padding: 0.15rem 0.5rem; font-size: 0.88rem; white-space: nowrap; }
+.tabela-verif .cod { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.08em; background: rgba(214, 168, 24, 0.22); border-radius: 999px; padding: 0.15rem 0.6rem; }
+.tabela-verif .resgate { font-size: 0.75rem; font-weight: 600; color: $petroleo; border: 1px solid rgba(42, 144, 128, 0.35); border-radius: 999px; padding: 0.1rem 0.55rem; margin-left: 0.4rem; white-space: nowrap; }
+@media (max-width: 600px) { .tabela-verif { font-size: 0.88rem; } .tabela-verif th, .tabela-verif td { padding: 0.65rem 0.7rem; } .tabela-verif td:first-child { width: auto; } }
+.rolagem { overflow-x: auto; }
+
+// Passo a passo.
+.passos { list-style: none; counter-reset: passo; padding: 0; margin: 0; }
+.passos > li { counter-increment: passo; position: relative; padding: 0 0 1.6rem 3.6rem; margin: 0; }
+.passos > li::before {
+  content: counter(passo); position: absolute; left: 0; top: -0.1rem; width: 2.4rem; height: 2.4rem; border-radius: 50%;
+  display: grid; place-items: center; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 1rem; color: #FFFFFF; background: $azul;
+  box-shadow: 0 0 0 5px $body-bg;
+}
+.passos > li:first-child::before { background: $petroleo; }
+.passos > li::after { content: ""; position: absolute; left: 1.15rem; top: 2.5rem; bottom: 0.2rem; width: 2px; background: $linha; }
+.passos > li:last-child::after { display: none; }
+.passos > li:last-child { padding-bottom: 0; }
+.passos .ingles { color: $ardosia; font-style: italic; }
+.passos code { white-space: nowrap; }
+
+// Aviso.
+.aviso { display: flex; gap: 1rem; align-items: flex-start; background: #FFFBEA; border: 1px solid rgba(214, 168, 24, 0.45); border-left: 5px solid $ouro; border-radius: 0.9rem; padding: 1.1rem 1.25rem; }
+.aviso p { margin: 0; color: $marinho; }
+.aviso svg { width: 1.4rem; height: 1.4rem; color: #A67F00; flex: none; margin-top: 0.15rem; }
+
+// Referência.
+.referencia { border-left: 4px solid $ouro; background: #FFFFFF; padding: 1.25rem 1.5rem; border-radius: 0 0.9rem 0.9rem 0; box-shadow: $sombra; color: $ardosia; }
+.referencia a { word-break: break-word; }
+
+// Rodapé.
+.nav-footer { border-top: 0; font-size: 0.85rem; padding-top: 1.3rem; padding-bottom: 1.3rem; }
+.nav-footer a { color: $ouro-claro; }
+
+// Navegação entre páginas.
+.page-navigation { max-width: 1120px; margin: 3rem auto 2.5rem auto; padding: 0 1.5rem; }
+
+@media (max-width: 1180px) { .capa .grafismo { display: none; } }
+@media (max-width: 600px) {
+  .faixa { padding: 3.25rem 0; }
+  .capa { padding: 4.25rem 0 3.75rem 0; }
+  .miolo, .miolo-estreito { padding: 0 1rem; }
+  .botao { width: 100%; justify-content: center; }
+}
+#title-block-header { display: none; }
+main.content#quarto-document-content { padding-top: 0 !important; padding-bottom: 0 !important; }
+.navbar-brand-container .navbar-logo, .navbar-logo { height: 30px; width: 30px; max-height: 30px; }
+.rolagem { padding: 4px 8px 16px 8px; margin: -4px -8px -16px -8px; }
+@media (max-width: 700px) {
+  .rolagem { overflow: visible; }
+  .tabela-verif thead { display: none; }
+  .tabela-verif, .tabela-verif tbody { display: block; }
+  .tabela-verif tr { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.45rem 0.7rem; padding: 0.85rem 0.95rem; border-bottom: 1px solid $linha; }
+  .tabela-verif tr:last-child { border-bottom: 0; }
+  .tabela-verif td { display: block; padding: 0 !important; border: 0 !important; width: auto !important; }
+  .tabela-verif td:nth-child(3) { font-size: 0.8rem; color: $ardosia; white-space: nowrap; }
+  .tabela-verif td:nth-child(4) { grid-column: 1 / -1; }
+  .tabela-verif code { white-space: normal; word-break: break-all; display: inline-block; }
+}

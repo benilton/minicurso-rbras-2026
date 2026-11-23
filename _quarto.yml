@@ -1,0 +1,48 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - slides/encontro1.html
+    - slides/encontro2.html
+    - assets/fontes/*.woff2
+    - assets/img/*
+    - .nojekyll
+
+lang: pt-BR
+
+website:
+  title: "Minicurso · 70ª RBras"
+  site-url: "https://benilton.github.io/minicurso-rbras-2026/"
+  repo-url: "https://github.com/benilton/minicurso-rbras-2026"
+  description: "Agrupamento de células e expressão diferencial em transcriptômica de célula única. Minicurso da 70ª RBras, IMECC/UNICAMP, 23 e 24 de novembro de 2026."
+  favicon: assets/img/favicon.svg
+  page-navigation: true
+  open-graph:
+    image: assets/img/capa_encontro1.jpg
+  navbar:
+    logo: assets/img/favicon.svg
+    title: "Minicurso · 70ª RBras"
+    right:
+      - text: "Programa"
+        href: programa.qmd
+      - text: "Encontro 1"
+        href: encontro-1.qmd
+      - text: "Encontro 2"
+        href: encontro-2.qmd
+      - text: "Como abrir no Colab"
+        href: como-abrir.qmd
+  page-footer:
+    left: "70ª RBras · IMECC/UNICAMP · Campinas, novembro de 2026"
+    right: "Material derivado do [scNotebooks](https://github.com/integrativebioinformatics/scNotebooks)"
+
+format:
+  html:
+    theme: [cosmo, assets/estilo.scss]
+    css: assets/fontes.css
+    toc: false
+    page-layout: full
+    title-block-style: none
+    smooth-scroll: true
+    anchor-sections: false
+    link-external-newwindow: true
+    link-external-icon: false
