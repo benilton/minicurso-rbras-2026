@@ -12,11 +12,11 @@ description: "Slides e notebook do encontro 2 do minicurso de agrupamento de cé
     <div class="meta">
       <div class="meta-item"><span class="rot">Data</span><span class="val">Terça, 24 de novembro de 2026</span></div>
       <div class="meta-item"><span class="rot">Horário</span><span class="val">08:00 às 10:00</span></div>
-      <div class="meta-item"><span class="rot">Conteúdo</span><span class="val">7 blocos · 91 slides</span></div>
+      <div class="meta-item"><span class="rot">Conteúdo</span><span class="val">Aula expositiva · 63 slides</span></div>
     </div>
     <div class="botoes">
       <a class="botao botao-ouro" href="https://colab.research.google.com/drive/1Q7U6X_Jxs4skmHT4zvU2W6wmEQ7yQ8ZT"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg><span>Abrir notebook no Colab</span></a>
-      <a class="botao botao-vazado" href="slides/encontro2.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><span>Slides em tela cheia</span></a>
+      <a class="botao botao-vazado" href="slides/encontro2_estatistica.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><span>Slides da aula em tela cheia</span></a>
       <a class="botao botao-vazado" href="https://drive.google.com/file/d/1Q7U6X_Jxs4skmHT4zvU2W6wmEQ7yQ8ZT/view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg><span>Notebook no Drive</span></a>
     </div>
   </div>
@@ -24,14 +24,25 @@ description: "Slides e notebook do encontro 2 do minicurso de agrupamento de cé
 
 <section class="faixa">
   <div class="miolo">
-    <div class="sobretitulo">Slides</div>
-    <h2 class="titulo-secao">Teoria do encontro 2</h2>
-    <div class="moldura-slides"><iframe src="slides/encontro2.html" title="Slides do encontro 2" loading="lazy" allowfullscreen></iframe></div>
+    <div class="sobretitulo">Slides da aula</div>
+    <h2 class="titulo-secao">Da matriz de contagens à biologia: um olhar estatístico</h2>
+    <p class="lead-texto" style="margin-bottom:1.75rem">Apresentação usada no encontro 2: controle de qualidade, normalização, PCA e UMAP, agrupamento, marcadores, expressão diferencial e análise funcional, com foco nas decisões estatísticas de cada etapa. Os resultados vêm da execução completa dos notebooks.</p>
+    <div class="moldura-slides"><iframe src="slides/encontro2_estatistica.html" title="Slides da aula do encontro 2" loading="lazy" allowfullscreen></iframe></div>
     <p class="dica">Clique nos slides e use <kbd>←</kbd> <kbd>→</kbd> para navegar, <kbd>F</kbd> para tela cheia e <kbd>O</kbd> para a visão geral.</p>
   </div>
 </section>
 
 <section class="faixa faixa-clara">
+  <div class="miolo">
+    <div class="sobretitulo">Para estudar depois</div>
+    <h2 class="titulo-secao">Slides completos com a prática guiada</h2>
+    <p class="lead-texto" style="margin-bottom:1.75rem">Versão bloco a bloco, que acompanha o notebook do encontro 2 célula por célula. Use junto com o notebook no Colab.</p>
+    <div class="moldura-slides"><iframe src="slides/encontro2.html" title="Slides completos do encontro 2" loading="lazy" allowfullscreen></iframe></div>
+    <div class="botoes" style="margin-top:1.5rem"><a class="botao botao-azul" href="slides/encontro2.html">Slides completos em tela cheia</a></div>
+  </div>
+</section>
+
+<section class="faixa">
   <div class="miolo">
     <div class="sobretitulo">Prática</div>
     <h2 class="titulo-secao">Pontos de verificação</h2>
@@ -50,7 +61,7 @@ description: "Slides e notebook do encontro 2 do minicurso de agrupamento de cé
   </div>
 </section>
 
-<section class="faixa">
+<section class="faixa faixa-clara">
   <div class="miolo-estreito">
     <div class="sobretitulo">Se algo der errado</div>
     <h2 class="titulo-secao">Pontos de resgate</h2>

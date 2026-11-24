@@ -4,6 +4,7 @@ project:
   resources:
     - slides/encontro1.html
     - slides/encontro2.html
+    - slides/encontro2_estatistica.html
     - assets/fontes/*.woff2
     - assets/img/*
     - .nojekyll
