@@ -12,7 +12,7 @@ description: "Slides e notebook do encontro 2 do minicurso de agrupamento de cé
     <div class="meta">
       <div class="meta-item"><span class="rot">Data</span><span class="val">Terça, 24 de novembro de 2026</span></div>
       <div class="meta-item"><span class="rot">Horário</span><span class="val">08:00 às 10:00</span></div>
-      <div class="meta-item"><span class="rot">Conteúdo</span><span class="val">Aula expositiva · 63 slides</span></div>
+      <div class="meta-item"><span class="rot">Conteúdo</span><span class="val">Aula expositiva · 65 slides</span></div>
     </div>
     <div class="botoes">
       <a class="botao botao-ouro" href="https://colab.research.google.com/drive/1Q7U6X_Jxs4skmHT4zvU2W6wmEQ7yQ8ZT"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg><span>Abrir notebook no Colab</span></a>
